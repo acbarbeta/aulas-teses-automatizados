@@ -28,7 +28,7 @@ class CalculadoraTest {
     }
 
     @Test
-    public void divideDoisNumeros() {
+    public void divideDoisNumeros() throws Exception {
         Calculadora calculadora = new Calculadora();
         double divisaoCalculada = calculadora.divide(8, 4);
         assertEquals(divisaoCalculada, 2);
@@ -37,8 +37,9 @@ class CalculadoraTest {
     @Test
     public void divisaoPorZero() {
         Calculadora calculadora = new Calculadora();
-        double divisaoCalculada = calculadora.divide(5, 0);
-        assertEquals(divisaoCalculada, -1);
+        assertThrows(IllegalArgumentException.class, () -> {
+            calculadora.divide(7.0, 0);
+        });
     }
 
 

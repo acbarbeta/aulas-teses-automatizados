@@ -14,9 +14,9 @@ public class Calculadora {
         return numero1 * numero2;
     }
 
-    public double divide(double numero1, double numero2) {
+    public double divide(double numero1, double numero2) throws Exception {
         if (numero2 == 0) {
-            return -1;
+            throw new IllegalArgumentException("Não existe divisão por 0");
         } else {
 
             return numero1 / numero2;
